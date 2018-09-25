@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-container>
+      <v-layout row wrap>
+        <TheExchange/>
+      </v-layout>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheExchange from '@/components/TheExchange'
+
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    TheExchange
+  },
+  methods: {
+    ...mapActions({ setStocks: 'setAllStocks' })
+  },
+  created() {
+    this.setStocks()
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
