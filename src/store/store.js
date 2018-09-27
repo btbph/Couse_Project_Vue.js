@@ -10,7 +10,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     allStocks: [],
-    currentStock: '',
+    currentStock: {},
+    isPairsLoading: false,
+    currentPair: ''
   },
   mutations,
   actions,

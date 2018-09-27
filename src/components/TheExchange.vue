@@ -1,11 +1,11 @@
 <template>
   <v-flex xs4>
-    <h1>Hello Exchange</h1>
+    <h1>Exchange</h1>
     <v-autocomplete
       v-model="currentStock"
       :items="stocks"
+      :loading="isLoading"
     />
-
   </v-flex>
 </template>
 
@@ -15,14 +15,17 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      currentStock: ''
+      currentStock: 0
     }
   },
   methods: {
     ...mapActions({ setStock: 'setCurrentStock' })
   },
   computed: {
-    ...mapGetters({ stocks: 'getAllStocks'})
+    ...mapGetters({
+      stocks: 'getAllStocks',
+      isLoading: 'getIsLoadingPairs'
+    }),
   },
   watch: {
     currentStock(value) {
@@ -31,7 +34,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

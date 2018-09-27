@@ -1,8 +1,9 @@
 <template>
   <v-app>
     <v-container>
-      <v-layout row wrap>
+      <v-layout justify-space-between wrap>
         <TheExchange/>
+        <ThePair/>
       </v-layout>
     </v-container>
   </v-app>
@@ -10,13 +11,15 @@
 
 <script>
 import TheExchange from '@/components/TheExchange'
+import ThePair from '@/components/ThePair'
 
 import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    TheExchange
+    TheExchange,
+    ThePair
   },
   methods: {
     ...mapActions({ setStocks: 'setAllStocks' })
