@@ -21,6 +21,15 @@ export const getters = {
     return state.currentStock
   },
   getCurrentTrades: state => {
-    return state.currentTrades
+    return state.currentTrades.map(trade => {
+      let tradeDate = new Date(trade.timestamp)
+      tradeDate = `${tradeDate.getHours()}:${tradeDate.getMinutes()}:${tradeDate.getSeconds()}`
+      return {
+        time: tradeDate,
+        side: trade.side,
+        size: trade.amount,
+        price: trade.price
+      }
+    })
   }
 }

@@ -1,7 +1,6 @@
 import cctx from 'ccxt'
 
 const getTrades = async (getters, commit, pair) => {
-  console.log(getters)
   const stock = getters['getCurrentStock']
   const limit = 20
   commit('setCurrentTrades', await stock.fetchTrades(pair, undefined, limit))
