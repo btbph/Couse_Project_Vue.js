@@ -7,7 +7,10 @@ export const mutations = {
   },
   setCurrentPair(state, payload) {
     state.currentPair = payload
-  } ,
+  },
+  setCurrentTrades(state, payload) {
+    state.currentTrades = payload
+  },
 
   setIsLoadingPairsPending(state) {
     state.isPairsLoading = true
@@ -16,7 +19,16 @@ export const mutations = {
     state.isPairsLoading = false
   },
   setIsLoadingPairsReject(state) {
-    state.isPairsLoading = false
+    state.isTradesLoading = false
   },
 
+  setIsLoadingTradesPending(state) {
+    state.isTradesLoading = true
+  },
+  setIsLoadingTradesResolve(state) {
+    state.isTradesLoading = false
+  },
+  setIsLoadingTradesReject(state) {
+    state.isTradesLoading = false
+  },
 }

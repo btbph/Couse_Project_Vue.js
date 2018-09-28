@@ -12,7 +12,9 @@ export default new Vuex.Store({
     allStocks: [],
     currentStock: {},
     isPairsLoading: false,
-    currentPair: ''
+    currentPair: '',
+    isTradesLoading: false,
+    currentTrades: []
   },
   mutations,
   actions,

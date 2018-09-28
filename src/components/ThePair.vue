@@ -5,6 +5,7 @@
       v-model="currentPair"
       :disabled="disableInput"
       :items="pairs"
+      :loading="isLoadingTrades"
     />
   </v-flex>
 </template>
@@ -19,9 +20,13 @@
       }
     },
     computed: {
-      ...mapGetters({ pairs: 'getCurrentPairs'}),
+      ...mapGetters({
+        pairs: 'getCurrentPairs',
+        isLoadingTrades: 'getIsLoadingTrades',
+        isLoadingPairs: 'getIsLoadingPairs'
+      }),
       disableInput() {
-        return this.pairs.length < 1
+        return this.isLoadingPairs || this.pairs.length < 1
       }
     },
     methods: {
@@ -30,7 +35,7 @@
     watch: {
       currentPair(pair) {
         this.setPair({ pair})
-      }
+      },
     }
   }
 </script>

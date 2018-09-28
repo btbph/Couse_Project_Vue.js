@@ -5,7 +5,22 @@ export const getters = {
   getCurrentPairs: state => {
     return state.currentStock.symbols || []
   },
+  getSelectedPair: state => {
+    return state.currentPair
+  },
   getIsLoadingPairs: state => {
     return state.isPairsLoading
+  },
+  getIsLoadingTrades: state => {
+    return state.isTradesLoading
+  },
+  getCurrentStockId: state => {
+    return state.currentStock.id
+  },
+  getCurrentStock: state => {
+    return state.currentStock
+  },
+  getCurrentTrades: state => {
+    return state.currentTrades
   }
 }

@@ -1,5 +1,12 @@
 import cctx from 'ccxt'
 
+const getTrades = async (getters, commit, pair) => {
+  console.log(getters)
+  const stock = getters['getCurrentStock']
+  const limit = 20
+  commit('setCurrentTrades', await stock.fetchTrades(pair, undefined, limit))
+}
+
 export const actions = {
   setAllStocks({ commit }) {
     commit('setAllStocks', cctx.exchanges)
@@ -20,7 +27,23 @@ export const actions = {
       commit('setIsLoadingPairsReject')
     }
   },
-  setCurrentPair({ commit }, { pair }) {
-    commit('setCurrentPair', pair)
+  setCurrentPair({ commit, getters }, { pair }) {
+    try {
+      commit('setCurrentPair', pair)
+      commit('setIsLoadingTradesPending')
+      getTrades(getters, commit, pair)
+      commit('setIsLoadingTradesResolve')
+    } catch (error) {
+      console.log(error.message)
+      commit('setIsLoadingTradesReject')
+    }
+  },
+  updateTrades({ commit, getters}) {
+    try {
+      const pair = getters['getSelectedPair']
+      getTrades(getters, commit, pair)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 }
