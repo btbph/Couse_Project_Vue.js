@@ -1,13 +1,33 @@
 <template>
-  <v-app>
-    <v-container fluid>
-      <v-layout justify-space-between wrap>
-        <TheExchange/>
-        <ThePair/>
-        <TheTrades/>
-      </v-layout>
-    </v-container>
-  </v-app>
+  <div>
+    <v-app>
+      <layout-golden class="hscreen">
+        <template slot="center">
+          Center
+        </template>
+        <template slot="right">
+          Right
+        </template>
+        <gl-row :closable="false">
+          <gl-col>
+            <gl-component title="Exchage">
+              <TheExchange/>
+            </gl-component>
+          </gl-col>
+          <gl-col>
+            <gl-component title="Pair">
+              <ThePair/>
+            </gl-component>
+          </gl-col>
+          <gl-col>
+            <gl-component title="Trades" class="trades">
+              <TheTrades/>
+            </gl-component>
+          </gl-col>
+        </gl-row>
+      </layout-golden>
+    </v-app>
+  </div>
 </template>
 
 <script>
@@ -32,3 +52,18 @@ export default {
   }
 }
 </script>
+
+<style>
+  .hscreen {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .trades {
+    overflow: scroll;
+  }
+  .glComponent {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+</style>

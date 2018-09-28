@@ -1,5 +1,5 @@
 <template>
-  <v-flex xs4>
+  <div>
     <h1>Pair</h1>
     <v-autocomplete
       v-model="currentPair"
@@ -7,7 +7,7 @@
       :items="pairs"
       :loading="isLoadingTrades"
     />
-  </v-flex>
+  </div>
 </template>
 
 <script>

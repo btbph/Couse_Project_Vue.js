@@ -2117,6 +2117,10 @@ css-declaration-sorter@^3.0.0:
     postcss "^6.0.0"
     timsort "^0.3.0"
 
+css-element-queries@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.0.2.tgz#a32edfee4a5023688ef4d45f402077306d51d44c"
+
 css-loader@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-1.0.0.tgz#9f46aaa5ca41dbe31860e3b62b8e23c42916bf56"
@@ -3508,6 +3512,12 @@ globby@^8.0.1:
     pify "^3.0.0"
     slash "^1.0.0"
 
+golden-layout@^1.5.8:
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/golden-layout/-/golden-layout-1.5.9.tgz#a39bc1f6a67e6f886b797c016dd924e9426ba77f"
+  dependencies:
+    jquery "*"
+
 got@7.1.0, got@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
@@ -3919,6 +3929,10 @@ internal-ip@^3.0.1:
     default-gateway "^2.6.0"
     ipaddr.js "^1.5.2"
 
+intersection-observer@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.5.0.tgz#9fe8bee3953c755b1485c38efd9633d535775ea6"
+
 invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -4264,6 +4278,10 @@ joi@^13.0.0:
     hoek "5.x.x"
     isemail "3.x.x"
     topo "3.x.x"
+
+jquery@*, jquery@^3.2.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-message@1.0.5:
   version "1.0.5"
@@ -5982,6 +6000,10 @@ reduce-css-calc@^2.0.0:
     css-unit-converter "^1.1.1"
     postcss-value-parser "^3.3.0"
 
+reflect-metadata@^0.1.10:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
+
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-7.0.0.tgz#107405afcc4a190ec5ed450ecaa00ed0cafa7a4c"
@@ -7293,6 +7315,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-class-component@^6.1.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.2.0.tgz#7adb1daa9a868c75f30f97f33f4f1b94aee62089"
+
 vue-cli-plugin-vuetify@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-0.2.0.tgz#f66aa544264ad0a17f70c056359151bcd4dc2e73"
@@ -7308,6 +7334,15 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
+vue-golden-layout@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/vue-golden-layout/-/vue-golden-layout-1.4.2.tgz#160ace0378e09971e9fc2baf2cabab6a2e9da266"
+  dependencies:
+    golden-layout "^1.5.8"
+    jquery "^3.2.1"
+    vue-property-decorator "^6.0.0"
+    vue-resize-directive "^1.0.0"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
@@ -7321,6 +7356,21 @@ vue-loader@^15.4.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-property-decorator@^6.0.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-6.1.0.tgz#ef97bcc1bfe794ec060133ca04a5aca02e808828"
+  dependencies:
+    reflect-metadata "^0.1.10"
+    vue-class-component "^6.1.0"
+
+vue-resize-directive@^1.0.0:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vue-resize-directive/-/vue-resize-directive-1.1.4.tgz#6a76fddc9d9c38f078d3be48b99de5e56d71b21c"
+  dependencies:
+    css-element-queries "^1.0.2"
+    intersection-observer "^0.5.0"
+    lodash.debounce "^4.0.8"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

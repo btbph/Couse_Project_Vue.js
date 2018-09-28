@@ -1,12 +1,12 @@
 <template>
-  <v-flex xs4>
+  <div>
     <h1>Exchange</h1>
     <v-autocomplete
       v-model="currentStock"
       :items="stocks"
       :loading="isLoading"
     />
-  </v-flex>
+  </div>
 </template>
 
 <script>
